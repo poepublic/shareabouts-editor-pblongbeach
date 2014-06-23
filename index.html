@@ -1,0 +1,158 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDOT | Shareabouts Editor</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    
+    <div class="contain-to-grid sticky">
+      <nav class="top-bar" data-topbar data-options="sticky_on: large">
+        <ul class="title-area">
+          <li class="name"><h1><a href="#">CDOT | Shareabouts Editor</a></h1></li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class=""><a href="#">Sign Out</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns">
+
+        <br>
+        <ul class="breadcrumbs">
+          <li><a href="datasets.html">Datasets</a></li>
+          <li><a href="places.html">Bike Parking</a></li>
+          <li class="current"><a href="#">Place 123456</a></li>
+        </ul>
+
+        <form>
+
+          <h1>Place 123456 <span class="label secondary radius">Created: <strong>June 23, 2014 at 14:21</strong></span></h1>
+
+          <div class="row">
+            <div class="columns">
+              <input id="priority" type="checkbox"><label for="priority">Priority</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="medium-8 columns">
+              <div class="row">
+                <div class="medium-6 columns">
+                  <label>Geocoded Location<input type="text"></label>
+                </div>
+                <div class="medium-6 columns">
+                  <label>Ward<input type="text"></label>
+                </div>
+              </div>
+              <label>Description<textarea rows="6"></textarea></label>
+              <label>Lat/Long<input type="text"></label>
+              <img src="http://placehold.it/900x325&text=map">
+              <button class="button tiny expand">EDIT LOCATION</button>
+            </div><!-- end .columns -->
+            <div class="medium-4 columns">
+              <label>Status
+                <select>
+                  <option value="">Not Yet Surveyed</option>
+                  <option value="">Inspected (needs further action)</option>
+                  <option value="">Approved</option>
+                  <option value="">Approved (sent to contractor)</option>
+                  <option value="">Rejected</option>
+                  <option value="">Pending</option>
+                  <option value="">Installed (awaits post-inspection)</option>
+                  <option value="">Installed (post-inspection failed)</option>
+                  <option value="">Installed (post-inspection passed)</option>
+                </select>
+              </label>
+              <label>Date Surveyed<input type="text"></label>
+              <label>Surveyed By<input type="text"></label>
+              <label>Rejection Reason
+                <select>
+                  <option value=""></option>
+                  <option value="">Residential</option>
+                  <option value="">Private Property</option>
+                  <option value="">Sufficient Bike Parking</option>
+                  <option value="">Insufficient Sidewalk Width</option>
+                  <option value="">Duplicate Request</option>
+                  <option value="">No Suitable Surface</option>
+                  <option value="">Not Enough Clearance</option>
+                  <option value="">Sidewalk Cafe</option>
+                  <option value="">Inside a Strip Mall/Shopping Center</option>
+                </select>
+              </label>
+              <div class="row">
+                <div class="columns small-5">
+                  <label>Approved Qty<input type="text"></label>
+                </div>
+                <div class="columns small-7">
+                  <label>Approved Type
+                    <select>
+                      <option value=""></option>
+                      <option value="">Type B</option>
+                      <option value="">Plaza</option>
+                      <option value="">Mini-Plaza</option>
+                      <option value="">Corral</option>
+                      <option value="">Type A5</option>
+                      <option value="">Type A3</option>
+                      <option value="">Other</option>
+                    </select>
+                  </label>
+                </div><!-- end .columns -->
+              </div><!-- end .row -->
+              <label>Date Installed<input type="text"></label>
+              <label>Post-Inspected By<input type="text"></label>
+              <label>Post-Inspection Results<input type="text"></label>
+            </div><!-- end .columns -->
+          </div><!-- end .row -->
+
+          <div class="row">
+            <div class="medium-8 columns">
+              <label>Public Notes<textarea rows="6"></textarea></label>
+              <label>Private Notes<textarea rows="6"></textarea></label>
+              <label>Contractor Notes<textarea rows="6"></textarea></label>
+            </div><!-- end .columns -->
+            <div class="medium-4 columns">
+              <label>Source
+                <select>
+                  <option value=""></option>
+                  <option value="">311</option>
+                  <option value="">311+Alderman</option>
+                  <option value="">Alderman</option>
+                  <option value="">Bike Parking Staff</option>
+                  <option value="">Phone</option>
+                  <option value="">Mayor</option>
+                </select>
+              </label>
+              <label>Source Locator<input type="text"></label>
+            </div><!-- end .columns -->
+          </div><!-- end .row -->
+
+          <hr>
+
+          <div class="row">
+            <div class="medium-4 columns">
+              <input type="submit" value="Save Changes" class="button large expand">
+            </div>
+          </div>
+
+        </form>
+
+
+      </div>
+    </div>
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
