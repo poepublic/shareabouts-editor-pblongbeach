@@ -10,16 +10,21 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-
+    <link rel="stylesheet" href="bower_components/foundation/css/normalize.css" />
+    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
+    <link rel="stylesheet" href="bower_components/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="bower_components/shareabouts-js/src/styles/shareabouts.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <!-- build:js scripts/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
-
+    <!-- endbuild -->
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -40,9 +45,29 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/backbone.marionette/lib/backbone.marionette.min.js"></script>
+    <script src="bower_components/leaflet-0.7.3/leaflet.js"></script>
+    <script src="bower_components/gatekeeper/gatekeeper.js"></script>
+    <script src="bower_components/jqxdomainrequest/jQuery.XDomainRequest.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
+    <script src="bower_components/swag/lib/swag.js"></script>
+
+    <script src="bower_components/shareabouts-js/src/utils.js"></script>
+    <script src="bower_components/shareabouts-js/src/auth.js"></script>
+    <script src="bower_components/shareabouts-js/src/models.js"></script>
+    <script src="bower_components/shareabouts-js/src/panel-layout.js"></script>
+    <script src="bower_components/shareabouts-js/src/place-detail-view.js"></script>
+    <script src="bower_components/shareabouts-js/src/place-form-view.js"></script>
+    <script src="bower_components/shareabouts-js/src/place-survey-view.js"></script>
+    <script src="bower_components/shareabouts-js/src/place-support-view.js"></script>
+    <script src="bower_components/shareabouts-js/src/map.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script>Swag.registerHelpers(Handlebars);</script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
