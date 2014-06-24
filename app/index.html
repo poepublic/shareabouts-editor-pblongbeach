@@ -32,16 +32,21 @@
     <![endif]-->
 
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-      <li>HTML5 Boilerplate</li>
-      <li>Sass with Compass</li>
-      <li>Modernizr</li>
-      </ul>
+    <div class="contain-to-grid sticky">
+      <nav class="top-bar" data-topbar data-options="sticky_on: large">
+        <ul class="title-area">
+          <li class="name"><h1><a href="#">CDOT | Shareabouts Editor</a></h1></li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class=""><a href="#">Sign Out</a></li>
+          </ul>
+        </section>
+      </nav>
     </div>
 
+    <div id="main-region"></div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -80,6 +85,9 @@
     </script>
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/controller.js"></script>
+    <script src="scripts/router.js"></script>
+    <script src="scripts/app.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 </body>
