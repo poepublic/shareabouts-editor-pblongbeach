@@ -14,5 +14,7 @@
     "shareabouts-js": "https://github.com/openplans/shareabouts.js.git#~3.1.2",
     "gatekeeper": "https://github.com/openplans/gatekeeper.git#~0.1.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "mocha": "~1.20.1"
+  }
 }
