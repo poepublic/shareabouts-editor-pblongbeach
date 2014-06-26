@@ -8,6 +8,18 @@ var Shareabouts = Shareabouts || {};
   NS.controller = {
     index: function() {
       console.log('show the index');
+    },
+    datasetList: function() {
+      console.log('list of datasets');
+    },
+    placeList: function(datasetSlug) {
+      var view = new NS.PlaceListView({
+        collection: NS.placeCollection
+      });
+
+      NS.app.mainRegion.show(view);
+
+      NS.placeCollection.fetch();
     }
   };
 
