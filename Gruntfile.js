@@ -1,4 +1,5 @@
 // Generated on 2014-06-24 using generator-webapp 0.4.7
+// Edited to add jstemplates
 'use strict';
 
 // # Globbing
@@ -309,7 +310,8 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*'
+                        'styles/fonts/{,*/}*.*',
+                        '!jstemplates/{,*/}*.html'
                     ]
                 }]
             },
@@ -351,6 +353,20 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+
+        handlebars: {
+            options: {
+                namespace: 'Shareabouts.Templates',
+                processName: function(filePath) {
+                    return filePath.replace(/^app\/jstemplates\//, '').replace(/\.html$/, '');
+                }
+            },
+            all: {
+                files: {
+                    ".tmp/scripts/jstemplates.js": ["<%= yeoman.app %>/jstemplates/**/*.html"]
+                }
+            }
         }
     });
 
@@ -362,6 +378,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
+            'handlebars',
             'concurrent:server',
             'autoprefixer',
             'connect:livereload',
@@ -391,6 +408,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'handlebars',
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
