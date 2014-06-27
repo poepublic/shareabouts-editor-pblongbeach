@@ -9,7 +9,9 @@ var Shareabouts = Shareabouts || {};
     controller: NS.controller,
     appRoutes: {
       '': 'index',
-      ':dataset_slug': 'placeList'
+      ':dataset_slug': 'placeList',
+      ':dataset_slug/page/:page': 'placeList'
+      // ':dataset_slug/:place_id': 'placeForm'
     }
   });
 }(Shareabouts, jQuery, Shareabouts.Util.console));

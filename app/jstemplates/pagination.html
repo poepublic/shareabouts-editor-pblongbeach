@@ -1,0 +1,23 @@
+<hr>
+<ul class="pagination">
+  {{#is metadata.page 1}}
+  <li class="arrow unavailable"><a href="#">&laquo;</a></li>
+  {{^}}
+  <li class="arrow"><a href="#" data-page="{{subtract metadata.page 1}}">&laquo;</a></li>
+  {{/is}}
+
+  {{#range 1 metadata.num_pages}}
+    {{#is ../metadata.page .}}
+    <li class="current"><a href="#" data-page="{{.}}">{{.}}</a></li>
+    {{^}}
+    <li><a href="#" data-page="{{.}}">{{.}}</a></li>
+    {{/is}}
+  {{/range}}
+
+  {{#is metadata.page metadata.num_pages}}
+  <li class="arrow unavailable"><a href="#">&raquo;</a></li>
+  {{^}}
+  <li class="arrow"><a href="#" data-page="{{add metadata.page 1}}">&raquo;</a></li>
+  {{/is}}
+</ul>
+<hr>

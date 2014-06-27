@@ -12,14 +12,19 @@ var Shareabouts = Shareabouts || {};
     datasetList: function() {
       console.log('list of datasets');
     },
-    placeList: function(datasetSlug) {
-      var view = new NS.PlaceListView({
+    placeList: function(datasetSlug, page) {
+      var view = new NS.PlaceListLayout({
         collection: NS.placeCollection
       });
 
       NS.app.mainRegion.show(view);
 
-      NS.placeCollection.fetch();
+      NS.placeCollection.fetch({
+        reset: true,
+        data: {
+          page: parseInt(page, 10) || 1
+        }
+      });
     }
   };
 
