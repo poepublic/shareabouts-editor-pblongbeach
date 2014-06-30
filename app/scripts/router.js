@@ -8,7 +8,7 @@ var Shareabouts = Shareabouts || {};
   NS.Router = Backbone.Marionette.AppRouter.extend({
     controller: NS.controller,
     appRoutes: {
-      '': 'index',
+      '': 'datasetList',
       ':dataset_slug': 'placeList',
       ':dataset_slug/page/:page': 'placeList'
       // ':dataset_slug/:place_id': 'placeForm'

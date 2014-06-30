@@ -10,10 +10,19 @@ var Shareabouts = Shareabouts || {};
       console.log('show the index');
     },
     datasetList: function() {
-      console.log('list of datasets');
+      var view = new NS.DatasetListView({
+        collection: NS.datasetCollection
+      });
+
+      NS.app.mainRegion.show(view);
     },
     placeList: function(datasetSlug, page) {
+      // Set the dataset url on the place collection
+      var dataset = NS.datasetCollection.findWhere({ id: datasetSlug });
+      NS.placeCollection.url = dataset.get('url') + '/places';
+
       var view = new NS.PlaceListLayout({
+        model: dataset,
         collection: NS.placeCollection
       });
 
@@ -22,6 +31,7 @@ var Shareabouts = Shareabouts || {};
       NS.placeCollection.fetch({
         reset: true,
         data: {
+          page_size: 25,
           page: parseInt(page, 10) || 1
         }
       });
