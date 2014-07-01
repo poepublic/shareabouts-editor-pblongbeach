@@ -10,8 +10,8 @@ var Shareabouts = Shareabouts || {};
     appRoutes: {
       '': 'datasetList',
       ':dataset_slug': 'placeList',
-      ':dataset_slug/page/:page': 'placeList'
-      // ':dataset_slug/:place_id': 'placeForm'
+      ':dataset_slug/page/:page': 'placeList',
+      ':dataset_slug/:place_id': 'placeForm'
     }
   });
 }(Shareabouts, jQuery, Shareabouts.Util.console));

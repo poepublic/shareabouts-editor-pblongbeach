@@ -1,0 +1,153 @@
+    <div class="row">
+      <div class="small-12 columns">
+        {{debug .}}
+        <br>
+        <ul class="breadcrumbs">
+          <li><a href="#">Datasets</a></li>
+          <li><a href="#{{ currentDataset "id" }}">{{ currentDataset "name" }}</a></li>
+          <li class="current"><a href="#">{{ id }} </a></li>
+        </ul>
+
+        <form>
+
+          <h1>{{>place-name . }} <span class="label secondary radius">Created: <strong>{{formatDateTime created_datetime 'MMM DD, YYYY [at] H:MM' }}</strong></span></h1>
+
+          <fieldset>
+            <legend>Place Details</legend>
+
+            <div class="row">
+              <div class="large-8 columns">
+
+                <label>Name<input type="text" name="name" value="{{name}}"></label>
+                <label>Description<textarea rows="6" name="description">{{ description }}</textarea></label>
+                <label>Source
+                  <select name="source">
+                    {{#select source}}
+                    <option value="Submitted via public map">Submitted via public map</option>
+                    <option value="311">311</option>
+                    <option value="311+Alderman">311+Alderman</option>
+                    <option value="Alderman">Alderman</option>
+                    <option value="Bike Parking Staff">Bike Parking Staff</option>
+                    <option value="Phone">Phone</option>
+                    <option value="Mayor">Mayor</option>
+                    {{/select}}
+                  </select>
+                </label>
+                <label>Source Locator<input type="text" name="source_locator" value="{{ source_locator }}"></label>
+
+              </div><!-- end .columns -->
+              <!--
+              <div class="large-4 columns">
+
+                <label>Location</label>
+                <img src="http://placehold.it/1000x550&text=map">
+                <button class="button tiny expand">EDIT LOCATION</button>
+                <label>Ward: <strong>Reverse-Geocoded Ward Name</strong></label>
+                <label>Address: <strong>Reverse-Geocoded Address</strong></label>
+
+              </div>--><!-- end .columns -->
+            </div><!-- end .row -->
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Bike Parking Status</legend>
+
+            <div class="row">
+              <div class="large-4 large-push-8 columns">
+
+                <br class="show-for-large-up">
+                <label for="priority" class="button secondary expand radius alert">
+                  <input id="priority" type="checkbox" name="priority" {{#if priority}}checked="checked"{{/if}}> PRIORITY</label>
+
+              </div><!-- end .columns -->
+              <div class="large-8 large-pull-4 columns">
+
+                <label>Status
+                  <select name="status">
+                    {{#select status}}
+                    <option value="">Not Yet Surveyed</option>
+                    <option value="Inspected (needs further action)">Inspected (needs further action)</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Approved (sent to contractor)">Approved (sent to contractor)</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Installed (awaits post-inspection)">Installed (awaits post-inspection)</option>
+                    <option value="Installed (post-inspection failed)">Installed (post-inspection failed)</option>
+                    <option value="Installed (post-inspection passed)">Installed (post-inspection passed)</option>
+                    {{/select}}
+                  </select>
+                </label>
+                <label>Date Surveyed<input type="text" class="date" name="date_surveyed" value="{{ date_surveyed }}"></label>
+                <label>Surveyed By<input type="text" name="surveyor" value="{{ surveyor }}"></label>
+                <label>Rejection Reason
+                  <select name="rejection_reason">
+                    {{#select rejection_reason}}
+                    <option value=""></option>
+                    <option value="Residential">Residential</option>
+                    <option value="Private Property">Private Property</option>
+                    <option value="Sufficient Bike Parking">Sufficient Bike Parking</option>
+                    <option value="Insufficient Sidewalk Width">Insufficient Sidewalk Width</option>
+                    <option value="Duplicate Request">Duplicate Request</option>
+                    <option value="No Suitable Surface">No Suitable Surface</option>
+                    <option value="Not Enough Clearance">Not Enough Clearance</option>
+                    <option value="Sidewalk Cafe">Sidewalk Cafe</option>
+                    <option value="Inside a Strip Mall/Shopping Center">Inside a Strip Mall/Shopping Center</option>
+                    {{/select}}
+                  </select>
+                </label>
+                <div class="row">
+                  <div class="columns small-5 medium-3">
+                    <label>Approved Qty<input type="text" name="approved_qty" value="{{approved_qty}}"></label>
+                  </div>
+                  <div class="columns small-7 medium-9">
+                    <label>Approved Type
+                      <select name="approved_type">
+                        {{#select approved_type}}
+                        <option value=""></option>
+                        <option value="Type B">Type B</option>
+                        <option value="Plaza">Plaza</option>
+                        <option value="Mini-Plaza">Mini-Plaza</option>
+                        <option value="Corral">Corral</option>
+                        <option value="Type A5">Type A5</option>
+                        <option value="Type A3">Type A3</option>
+                        <option value="Other">Other</option>
+                        {{/select}}
+                      </select>
+                    </label>
+                  </div><!-- end .columns -->
+                </div><!-- end .row -->
+
+                <hr>
+
+                <label>Date Installed<input type="text" name="date_installed" value="{{ date_installed }}"></label>
+                <label>Post-Inspected By<input type="text" name="post_inspected_by" value="{{ post_inspected_by }}"></label>
+                <label>Post-Inspection Results<input type="text" name="post_inspection_results" value="{{ post_inspection_results }}"></label>
+
+                </div><!-- end .columns -->
+              </div><!-- end .row -->
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Notes</legend>
+
+            <div class="row">
+              <div class="large-8 columns">
+
+                <label>Public Notes<textarea rows="6" name="notes_public">{{ notes_public }}</textarea></label>
+                <label>Private Notes<textarea rows="6" name="notes_private">{{ notes_private }}</textarea></label>
+                <label>Contractor Notes<textarea rows="6" name="notes_contractor">{{ notes_contractor }}</textarea></label>
+
+              </div><!-- end .columns -->
+            </div><!-- end .row -->
+
+          </fieldset>
+
+          <input type="submit" value="Save Changes" class="button large expand">
+
+        </form>
+
+
+      </div>
+    </div>
