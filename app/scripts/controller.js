@@ -1,21 +1,49 @@
-/*global jQuery, Backbone */
+/*global jQuery, Backbone, _ */
 
 var Shareabouts = Shareabouts || {};
 
 (function(NS, $, console){
   'use strict';
 
+  var signInRequired = function(f) {
+    var wrapper = function() {
+      var wrapperArgs = arguments,
+          successRedirect = function() { f.apply(this, wrapperArgs); },
+          user;
+
+      // Check whether the user is logged in
+      user = NS.auth.getUserSession();
+
+      if (!user) {
+        // If not, run the sign in with the success redirect
+        NS.controller.signin(successRedirect);
+      } else {
+        // If so then just run the wrapped function
+        NS.user = user;
+        f.apply(this, wrapperArgs);
+      }
+    };
+
+    return wrapper;
+  };
+
   NS.controller = {
     index: function() {
       console.log('show the index');
     },
-    datasetList: function() {
+    signin: function(redirect) {
+      var view = new NS.SignInView({
+        redirect: redirect
+      });
+      NS.app.mainRegion.show(view);
+    },
+    datasetList: signInRequired(function() {
       var view = new NS.DatasetListView({
         collection: NS.datasetCollection
       });
 
       NS.app.mainRegion.show(view);
-    },
+    }),
     placeList: function(datasetSlug, page) {
       // Set the dataset url on the place collection
       NS.currentDataset = NS.datasetCollection.findWhere({ id: datasetSlug });

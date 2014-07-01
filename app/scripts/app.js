@@ -26,6 +26,11 @@ var Shareabouts = Shareabouts || {};
     // NS.placeCollection.url = 'http://data.shareabouts.org/api/v2/demo-user/datasets/demo-data/places';
   });
 
+  // Initialize the user authentication
+  NS.app.addInitializer(function(options){
+    NS.auth = new NS.Auth();
+  });
+
   // Initialize the router and history on start
   NS.app.addInitializer(function(options){
     NS.router = new NS.Router();
