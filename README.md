@@ -13,8 +13,9 @@ To get set up, run:
 To deploy this repository to gh-pages, run the following commands:
 
     grunt build
-    git add dist
+    git add --all dist
     git commit -m "Update the distribution files"
+    git push
     git subtree push --prefix dist origin gh-pages
 
 *(Subtree instructions from https://gist.github.com/cobyism/4730490)*
