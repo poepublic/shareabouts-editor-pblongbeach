@@ -10,6 +10,12 @@ To get set up, run:
     npm install
     bower install
 
+Make sure that the dataset allows access from the domain you want to run
+this app from (e.g. *openplans.github.io*). The origin does not need to have
+any explicit permissions on the dataset. In fact, you might as well remove
+all permissions from the origin, as the user will be used determine
+authorization.
+
 To deploy this repository to gh-pages, run the following commands:
 
     grunt build
@@ -19,12 +25,6 @@ To deploy this repository to gh-pages, run the following commands:
     git subtree push --prefix dist origin gh-pages
 
 *(Subtree instructions from https://gist.github.com/cobyism/4730490)*
-
-Make sure that the dataset allows access from the domain you want to run
-this app from (e.g. *openplans.github.io*). The origin does not need to have
-any explicit permissions on the dataset. In fact, you might as well remove
-all permissions from the origin, as the user will be used determine
-authorization.
 
 
 Browser Compatibility
