@@ -44,7 +44,7 @@ var Shareabouts = Shareabouts || {};
 
       NS.app.mainRegion.show(view);
     }),
-    placeList: function(datasetSlug, page) {
+    placeList: signInRequired(function(datasetSlug, page) {
       // Set the dataset url on the place collection
       NS.currentDataset = NS.datasetCollection.findWhere({ id: datasetSlug });
       NS.placeCollection.url = NS.currentDataset.get('url') + '/places';
@@ -63,8 +63,8 @@ var Shareabouts = Shareabouts || {};
           page: parseInt(page, 10) || 1
         }
       });
-    },
-    placeForm: function(datasetSlug, placeId) {
+    }),
+    placeForm: signInRequired(function(datasetSlug, placeId) {
       // Set the dataset url on the place collection
       NS.currentDataset = NS.datasetCollection.findWhere({ id: datasetSlug });
       NS.placeCollection.url = NS.currentDataset.get('url') + '/places';
@@ -92,7 +92,7 @@ var Shareabouts = Shareabouts || {};
         });
       }
 
-    }
+    })
   };
 
 
