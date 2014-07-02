@@ -12,6 +12,17 @@ var Shareabouts = Shareabouts || {};
       'click .sign-out-link': 'onSignOutClick'
     },
 
+    serializeData: function() {
+      return {user: NS.auth.getUserSession()};
+    },
+
+    onRender: function() {
+      var self = this;
+      $(NS.auth).on('authsuccess', function(evt, data) {
+        self.$('.sign-out-link').toggleClass('hide-for-small-up', !data);
+      });
+    },
+
     onSignOutClick: function(evt) {
       evt.preventDefault();
 
