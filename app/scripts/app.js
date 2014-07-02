@@ -9,6 +9,7 @@ var Shareabouts = Shareabouts || {};
 
   // Add the main region
   NS.app.addRegions({
+    headerRegion: '#header-region',
     mainRegion: '#main-region'
   });
 
@@ -28,7 +29,13 @@ var Shareabouts = Shareabouts || {};
 
   // Initialize the user authentication
   NS.app.addInitializer(function(options){
-    NS.auth = new NS.Auth();
+    NS.auth = new NS.Auth({apiRoot: 'http://localhost:8000/api/v2/'});
+  });
+
+  // Show the header region
+  NS.app.addInitializer(function(options){
+    var view = new NS.HeaderBarView();
+    NS.app.headerRegion.show(view);
   });
 
   // Initialize the router and history on start
