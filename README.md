@@ -25,3 +25,10 @@ this app from (e.g. *openplans.github.io*). The origin does not need to have
 any explicit permissions on the dataset. In fact, you might as well remove
 all permissions from the origin, as the user will be used determine
 authorization.
+
+
+Browser Compatibility
+---------------------
+
+This application has been tested in IE 10, Chrome 34, and Firefox 30. It should
+work in new versions of each as well.
