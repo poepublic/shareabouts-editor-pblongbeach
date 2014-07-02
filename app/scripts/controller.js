@@ -59,6 +59,8 @@ var Shareabouts = Shareabouts || {};
       NS.placeCollection.fetch({
         reset: true,
         data: {
+          include_private: true,
+          include_invisible: true,
           page_size: 25,
           page: parseInt(page, 10) || 1
         }
