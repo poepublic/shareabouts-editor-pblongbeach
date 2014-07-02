@@ -29,7 +29,7 @@ var Shareabouts = Shareabouts || {};
 
   // Initialize the user authentication
   NS.app.addInitializer(function(options){
-    NS.auth = new NS.Auth({apiRoot: 'http://localhost:8000/api/v2/'});
+    NS.auth = new NS.Auth();
   });
 
   // Show the header region
