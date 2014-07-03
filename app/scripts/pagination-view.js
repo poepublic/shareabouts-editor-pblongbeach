@@ -22,11 +22,14 @@ var Shareabouts = Shareabouts || {};
         this.collection.fetch({
           reset: true,
           data: {
-            page: page
+            include_private: true,
+            include_invisible: true,
+            page_size: 25,
+            page: parseInt(page, 10) || 1
           }
         });
 
-        NS.router.navigate('dataset/page/'+page);
+        NS.router.navigate(NS.currentDataset.get('id') + '/page/'+page);
       }
 
     },
