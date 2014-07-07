@@ -76,7 +76,8 @@ var Shareabouts = Shareabouts || {};
             var view = new NS.PlaceFormView({
               model: model,
               collection: NS.placeCollection,
-              template: NS.Templates['place-form']
+              template: NS.Templates['place-form'],
+              silent: true
             });
 
             NS.app.mainRegion.show(view);
