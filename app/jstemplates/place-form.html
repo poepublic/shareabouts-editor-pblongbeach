@@ -18,8 +18,8 @@
             <div class="row">
               <div class="large-8 columns">
 
-                <label>Name<input type="text" name="name" value="{{name}}"></label>
-                <label>Description<textarea rows="6" name="description">{{ description }}</textarea></label>
+                <label>Name <em>(shown on map)</em><input type="text" name="name" value="{{name}}"></label>
+                <label>Description <em>(shown on map)</em><textarea rows="6" name="description">{{ description }}</textarea></label>
                 <label>Source
                   <select name="source">
                     {{#select source}}
@@ -63,7 +63,7 @@
               </div><!-- end .columns -->
               <div class="large-8 large-pull-4 columns">
 
-                <label>Status
+                <label>Status <em>(shown on map)</em>
                   <select name="status">
                     {{#select status}}
 
@@ -82,7 +82,7 @@
                 </label>
                 <label>Date Surveyed<input type="text" class="date" name="date_surveyed" value="{{ date_surveyed }}"></label>
                 <label>Surveyed By<input type="text" name="surveyor" value="{{ surveyor }}"></label>
-                <label>Rejection Reason
+                <label>Rejection Reason <em>(shown on map)</em>
                   <select name="rejection_reason">
                     {{#select rejection_reason}}
                     <option value=""></option>
@@ -137,7 +137,7 @@
             <div class="row">
               <div class="large-8 columns">
 
-                <label>Public Notes<textarea rows="6" name="notes_public">{{ notes_public }}</textarea></label>
+                <label>Public Notes <em>(shown on map)</em><textarea rows="6" name="notes_public">{{ notes_public }}</textarea></label>
                 <label>Private Notes<textarea rows="6" name="notes_private">{{ notes_private }}</textarea></label>
                 <label>Contractor Notes<textarea rows="6" name="notes_contractor">{{ notes_contractor }}</textarea></label>
 
