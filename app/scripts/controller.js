@@ -73,12 +73,14 @@ var Shareabouts = Shareabouts || {};
 
       var model = NS.placeCollection.get(placeId),
           showPlaceForm = function(model) {
-            var view = new NS.PlaceFormView({
-              model: model,
-              collection: NS.placeCollection,
-              template: NS.Templates['place-form'],
-              silent: true
-            });
+            var template = model.get('location_type') === 'bikeparking' ?
+                              'bike-parking-form' : 'abandoned-bike-form',
+                view = new NS.PlaceFormView({
+                  model: model,
+                  collection: NS.placeCollection,
+                  template: NS.Templates[template],
+                  silent: true
+                });
 
             NS.app.mainRegion.show(view);
           };
