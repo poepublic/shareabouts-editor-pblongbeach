@@ -16,7 +16,12 @@ any explicit permissions on the dataset. In fact, you might as well remove
 all permissions from the origin, as the user will be used determine
 authorization.
 
-To deploy this repository to gh-pages, run the following commands:
+Deploying
+---------
+
+To deploy this repository to gh-pages, run the following commands *within a
+clean repository* (any files that are modified and not checked in will find
+their way into the distribution if your repository is not clean):
 
     grunt build
     git add --all dist
