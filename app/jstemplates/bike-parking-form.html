@@ -66,17 +66,10 @@
                 <label>Status <em>(shown on map)</em>
                   <select name="status">
                     {{#select status}}
-
-                    {{#is location_type "bikeparking"}}
                     <option value="">Not Yet Surveyed</option>
                     <option value="Approved">Approved</option>
                     <option value="Rejected">Rejected</option>
                     <option value="Existing">Existing</option>
-                    {{^}}
-                    <option value="">New Report</option>
-                    <option value="Resolved">Resolved</option>
-                    {{/is}}
-
                     {{/select}}
                   </select>
                 </label>
