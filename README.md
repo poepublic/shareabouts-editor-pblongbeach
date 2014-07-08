@@ -19,8 +19,8 @@ authorization.
 Deploying
 ---------
 
-To deploy this repository to gh-pages, run the following commands *within a
-clean repository* (any files that are modified and not checked in will find
+To deploy this repository to gh-pages, run the following commands **within a
+clean repository** (any files that are modified and not checked in will find
 their way into the distribution if your repository is not clean):
 
     grunt build
