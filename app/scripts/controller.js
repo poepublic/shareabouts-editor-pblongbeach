@@ -73,14 +73,27 @@ var Shareabouts = Shareabouts || {};
 
       var model = NS.placeCollection.get(placeId),
           showPlaceForm = function(model) {
-            var template = model.get('location_type') === 'bikeparking' ?
+            var $alert = $('.save-message'),
+                template = model.get('location_type') === 'bikeparking' ?
                               'bike-parking-form' : 'abandoned-bike-form',
                 view = new NS.PlaceFormView({
                   model: model,
                   collection: NS.placeCollection,
                   template: NS.Templates[template],
                   silent: true,
-                  include_invisible: true
+                  include_invisible: true,
+                  success: function() {
+                    $alert.removeClass('alert').addClass('success show');
+                    _.delay(function() {
+                      $alert.removeClass('show');
+                    }, 3000);
+                  },
+                  error: function() {
+                    $alert.removeClass('success').addClass('alert show');
+                    _.delay(function() {
+                      $alert.removeClass('show');
+                    }, 3000);
+                  }
                 });
 
             NS.app.mainRegion.show(view);
@@ -101,7 +114,6 @@ var Shareabouts = Shareabouts || {};
           }
         });
       }
-
     })
   };
 
