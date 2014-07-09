@@ -42,6 +42,10 @@ var Shareabouts = Shareabouts || {};
   NS.app.addInitializer(function(options){
     NS.router = new NS.Router();
     Backbone.history.start();
-  });
 
+    // Scroll to the top of the page on route changes
+    NS.router.on('route', function() {
+      window.scrollTo(0,0);
+    });
+  });
 }(Shareabouts, jQuery, Shareabouts.Util.console));
