@@ -1,6 +1,5 @@
     <div class="row">
       <div class="small-12 columns">
-        {{debug .}}
         <br>
         <ul class="breadcrumbs">
           <li><a href="#">Datasets</a></li>
@@ -13,7 +12,7 @@
           <h1>{{>place-name . }} <span class="label secondary radius">Created: <strong>{{formatDateTime created_datetime 'MMM DD, YYYY [at] H:MM' }}</strong></span></h1>
 
           <fieldset>
-            <legend>Place Details</legend>
+            <legend>Details</legend>
 
             <div class="row">
               <div class="large-8 columns">
@@ -36,22 +35,26 @@
                 <label>Source Locator<input type="text" name="source_locator" value="{{ source_locator }}"></label>
 
               </div><!-- end .columns -->
-              <!--
-              <div class="large-4 columns">
 
+              <div class="large-4 columns">
+                <label for="visible" class="button secondary expand radius">
+                <input id="visible" type="checkbox" name="visible" {{#if visible}}checked="checked"{{/if}}> Visible on Map</label>
+
+
+                <!--
                 <label>Location</label>
                 <img src="http://placehold.it/1000x550&text=map">
                 <button class="button tiny expand">EDIT LOCATION</button>
                 <label>Ward: <strong>Reverse-Geocoded Ward Name</strong></label>
                 <label>Address: <strong>Reverse-Geocoded Address</strong></label>
-
-              </div>--><!-- end .columns -->
+                -->
+              </div><!-- end .columns -->
             </div><!-- end .row -->
 
           </fieldset>
 
           <fieldset>
-            <legend>Bike Parking Status</legend>
+            <legend>Status</legend>
 
             <div class="row">
               <div class="large-4 large-push-8 columns">

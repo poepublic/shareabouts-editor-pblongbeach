@@ -79,7 +79,8 @@ var Shareabouts = Shareabouts || {};
                   model: model,
                   collection: NS.placeCollection,
                   template: NS.Templates[template],
-                  silent: true
+                  silent: true,
+                  include_invisible: true
                 });
 
             NS.app.mainRegion.show(view);
@@ -89,6 +90,10 @@ var Shareabouts = Shareabouts || {};
         showPlaceForm(model);
       } else {
         NS.placeCollection.fetchById(placeId, {
+          data: {
+            include_private: true,
+            include_invisible: true
+          },
           success: showPlaceForm,
           error: function() {
             window.alert('Place ' + placeId + ' can not be found.');
