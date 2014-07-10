@@ -1,4 +1,4 @@
-/*global jQuery, Backbone, _ */
+/*global jQuery, Backbone, _, L */
 
 var Shareabouts = Shareabouts || {};
 
@@ -87,6 +87,9 @@ var Shareabouts = Shareabouts || {};
                     _.delay(function() {
                       $alert.removeClass('show');
                     }, 3000);
+
+                    view.render();
+                    NS.app.mainRegion.show(view);
                   },
                   error: function() {
                     $alert.removeClass('success').addClass('alert show');
@@ -94,6 +97,41 @@ var Shareabouts = Shareabouts || {};
                       $alert.removeClass('show');
                     }, 3000);
                   }
+                });
+
+                view.on('show', function() {
+                  // Setup a map for editing the place
+                  var coords = model.get('geometry').coordinates,
+                      map = L.map(view.$('.map').get(0), {
+                        layers: [L.tileLayer('http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png', {
+                          attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>',
+                        })],
+                        center: [coords[1], coords[0]],
+                        zoom: 15
+                      }),
+                      marker = L.marker([coords[1], coords[0]], {
+                        draggable: true
+                      }).addTo(map);
+
+                  // Set the lat/lng of the location
+                  marker.on('dragend', function(evt) {
+                    var ll = marker.getLatLng();
+                    view.setGeometry({
+                      type: 'Point',
+                      coordinates: [ll.lng, ll.lat]
+                    });
+
+                    NS.Util.MapQuest.reverseGeocode(ll, {
+                      success: function(data) {
+                        console.log('reverseGeocode', arguments);
+                        var locationsData = data.results[0].locations;
+                        if (locationsData.length > 0) {
+                          model.set('location', locationsData[0]);
+                        }
+                      }},
+                      'Fmjtd%7Cluur2g0bnl%2C25%3Do5-9at29u'
+                    );
+                  });
                 });
 
             NS.app.mainRegion.show(view);
