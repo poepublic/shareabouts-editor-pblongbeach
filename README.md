@@ -12,9 +12,12 @@ To get set up, run:
 
 Make sure that the dataset allows access from the domain you want to run
 this app from (e.g. *openplans.github.io*). The origin does not need to have
-any explicit permissions on the dataset. In fact, you might as well remove
-all permissions from the origin, as the user will be used determine
-authorization.
+any explicit permissions on the dataset. Remove permissions from the origin, 
+as the user will be used determine authorization.
+
+To run the server locally:
+
+    grunt serve
 
 Deploying
 ---------
@@ -32,6 +35,7 @@ their way into the distribution if your repository is not clean):
 
 *(Subtree instructions from https://gist.github.com/cobyism/4730490)*
 
+If you're missing subtree, [install it](http://engineeredweb.com/blog/how-to-install-git-subtree/).
 
 Browser Compatibility
 ---------------------
