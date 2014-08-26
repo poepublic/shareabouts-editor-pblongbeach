@@ -20,8 +20,8 @@
                 <label>Name <em>(shown on map)</em><input type="text" name="name" value="{{name}}"></label>
                 <label>Description <em>(shown on map)</em><textarea rows="6" name="description">{{ description }}</textarea></label>
                 <label>Source
-                  <select name="source">
-                    {{#select source}}
+                  <select name="private_source">
+                    {{#select private_source}}
                     <option value="Submitted via public map">Submitted via public map</option>
                     <option value="311">311</option>
                     <option value="311+Alderman">311+Alderman</option>
@@ -32,7 +32,7 @@
                     {{/select}}
                   </select>
                 </label>
-                <label>Source Locator<input type="text" name="source_locator" value="{{ source_locator }}"></label>
+                <label>Source Locator<input type="text" name="private_source_locator" value="{{ private_source_locator }}"></label>
 
               </div><!-- end .columns -->
 
@@ -57,7 +57,7 @@
 
                 <br class="show-for-large-up">
                 <label for="priority" class="button secondary expand radius">
-                  <input id="priority" type="checkbox" name="priority" {{#if priority}}checked="checked"{{/if}}> PRIORITY</label>
+                  <input id="priority" type="checkbox" name="private_priority" {{#if private_priority}}checked="checked"{{/if}}> PRIORITY</label>
 
               </div><!-- end .columns -->
               <div class="large-8 large-pull-4 columns">
@@ -70,10 +70,10 @@
                     {{/select}}
                   </select>
                 </label>
-                <label>Date Visited<input type="text" class="date" name="date_visited" value="{{ date_visited }}"></label>
-                <label>Date Safe for Removal<input type="text" name="date_safe_to_remove" value="{{ date_safe_to_remove }}"></label>
-                <label>Date Removed<input type="text" name="date_removed" value="{{ date_removed }}"></label>
-                <label>Date Received by Working Bikes<input type="text" name="date_received" value="{{ date_received }}"></label>
+                <label>Date Visited<input type="text" class="date" name="private_date_visited" value="{{ private_date_visited }}"></label>
+                <label>Date Safe for Removal<input type="text" name="private_date_safe_to_remove" value="{{ private_date_safe_to_remove }}"></label>
+                <label>Date Removed<input type="text" name="private_date_removed" value="{{ private_date_removed }}"></label>
+                <label>Date Received by Working Bikes<input type="text" name="private_date_received" value="{{ private_date_received }}"></label>
 
 
                 </div><!-- end .columns -->
@@ -88,8 +88,8 @@
               <div class="large-8 columns">
 
                 <label>Public Notes <em>(shown on map)</em><textarea rows="6" name="notes_public">{{ notes_public }}</textarea></label>
-                <label>Private Notes<textarea rows="6" name="notes_private">{{ notes_private }}</textarea></label>
-                <label>Contractor Notes<textarea rows="6" name="notes_contractor">{{ notes_contractor }}</textarea></label>
+                <label>Private Notes<textarea rows="6" name="private_notes">{{ private_notes }}</textarea></label>
+                <label>Contractor Notes<textarea rows="6" name="private_contractor_notes">{{ private_contractor_notes }}</textarea></label>
 
               </div><!-- end .columns -->
             </div><!-- end .row -->

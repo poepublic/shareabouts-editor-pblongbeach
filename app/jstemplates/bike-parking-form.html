@@ -20,8 +20,8 @@
                 <label>Name <em>(shown on map)</em><input type="text" name="name" value="{{name}}"></label>
                 <label>Description <em>(shown on map)</em><textarea rows="6" name="description">{{ description }}</textarea></label>
                 <label>Source
-                  <select name="source">
-                    {{#select source}}
+                  <select name="private_source">
+                    {{#select private_source}}
                     <option value="Submitted via public map">Submitted via public map</option>
                     <option value="311">311</option>
                     <option value="311+Alderman">311+Alderman</option>
@@ -32,7 +32,7 @@
                     {{/select}}
                   </select>
                 </label>
-                <label>Source Locator<input type="text" name="source_locator" value="{{ source_locator }}"></label>
+                <label>Source Locator<input type="text" name="private_source_locator" value="{{ private_source_locator }}"></label>
 
               </div><!-- end .columns -->
 
@@ -57,7 +57,7 @@
 
                 <br class="show-for-large-up">
                 <label for="priority" class="button secondary expand radius">
-                  <input id="priority" type="checkbox" name="priority" {{#if priority}}checked="checked"{{/if}}> PRIORITY</label>
+                  <input id="priority" type="checkbox" name="private_priority" {{#if private_priority}}checked="checked"{{/if}}> PRIORITY</label>
 
               </div><!-- end .columns -->
               <div class="large-8 large-pull-4 columns">
@@ -72,8 +72,8 @@
                     {{/select}}
                   </select>
                 </label>
-                <label>Date Surveyed<input type="text" class="date" name="date_surveyed" value="{{ date_surveyed }}"></label>
-                <label>Surveyed By<input type="text" name="surveyor" value="{{ surveyor }}"></label>
+                <label>Date Surveyed<input type="text" class="date" name="private_date_surveyed" value="{{ private_date_surveyed }}"></label>
+                <label>Surveyed By<input type="text" name="private_surveyor" value="{{ private_surveyor }}"></label>
                 <label>Rejection Reason <em>(shown on map)</em>
                   <select name="rejection_reason">
                     {{#select rejection_reason}}
@@ -92,12 +92,12 @@
                 </label>
                 <div class="row">
                   <div class="columns small-5 medium-3">
-                    <label>Approved Qty<input type="text" name="approved_qty" value="{{approved_qty}}"></label>
+                    <label>Approved Qty<input type="text" name="private_approved_qty" value="{{private_approved_qty}}"></label>
                   </div>
                   <div class="columns small-7 medium-9">
                     <label>Approved Type
-                      <select name="approved_type">
-                        {{#select approved_type}}
+                      <select name="private_approved_type">
+                        {{#select private_approved_type}}
                         <option value=""></option>
                         <option value="Type B">Type B</option>
                         <option value="Plaza">Plaza</option>
@@ -114,9 +114,9 @@
 
                 <hr>
 
-                <label>Date Installed<input type="text" name="date_installed" value="{{ date_installed }}"></label>
-                <label>Post-Inspected By<input type="text" name="post_inspected_by" value="{{ post_inspected_by }}"></label>
-                <label>Post-Inspection Results<input type="text" name="post_inspection_results" value="{{ post_inspection_results }}"></label>
+                <label>Date Installed<input type="text" name="private_date_installed" value="{{ private_date_installed }}"></label>
+                <label>Post-Inspected By<input type="text" name="private_post_inspected_by" value="{{ private_post_inspected_by }}"></label>
+                <label>Post-Inspection Results<input type="text" name="private_post_inspection_results" value="{{ private_post_inspection_results }}"></label>
 
                 </div><!-- end .columns -->
               </div><!-- end .row -->
@@ -130,8 +130,8 @@
               <div class="large-8 columns">
 
                 <label>Public Notes <em>(shown on map)</em><textarea rows="6" name="notes_public">{{ notes_public }}</textarea></label>
-                <label>Private Notes<textarea rows="6" name="notes_private">{{ notes_private }}</textarea></label>
-                <label>Contractor Notes<textarea rows="6" name="notes_contractor">{{ notes_contractor }}</textarea></label>
+                <label>Private Notes<textarea rows="6" name="private_notes">{{ private_notes }}</textarea></label>
+                <label>Contractor Notes<textarea rows="6" name="private_contractor_notes">{{ private_contractor_notes }}</textarea></label>
 
               </div><!-- end .columns -->
             </div><!-- end .row -->
