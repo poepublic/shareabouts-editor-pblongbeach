@@ -72,6 +72,17 @@ var Shareabouts = Shareabouts || {};
       NS.placeCollection.url = NS.currentDataset.get('url') + '/places';
 
       var model = NS.placeCollection.get(placeId),
+          getWard = function(lat, lng, success, error) {
+            $.ajax({
+              url: 'https://shareabouts-region-service.herokuapp.com/api/v1/chicago/wards',
+              data: {
+                ll: lat+','+lng
+              },
+              dataType: 'jsonp',
+              success: success,
+              error: error
+            });
+          },
           showPlaceForm = function(model) {
             var $alert = $('.save-message'),
                 template = model.get('location_type') === 'bikeparking' ?
@@ -99,6 +110,12 @@ var Shareabouts = Shareabouts || {};
                   }
                 });
 
+                view.on('render', function() {
+                  this.$('.location-details').html(
+                    NS.Templates['location-details'](this.model.toJSON())
+                  );
+                });
+
                 view.on('show', function() {
                   // Setup a map for editing the place
                   var coords = model.get('geometry').coordinates,
@@ -123,14 +140,27 @@ var Shareabouts = Shareabouts || {};
 
                     NS.Util.MapQuest.reverseGeocode(ll, {
                       success: function(data) {
-                        console.log('reverseGeocode', arguments);
                         var locationsData = data.results[0].locations;
                         if (locationsData.length > 0) {
                           model.set('location', locationsData[0]);
+                          view.$('.location-details').html(
+                            NS.Templates['location-details'](view.model.toJSON())
+                          );
                         }
                       }},
                       'Fmjtd%7Cluur2g0bnl%2C25%3Do5-9at29u'
                     );
+
+                    getWard(ll.lat, ll.lng,
+                        function(data) {
+                          model.set(data);
+                          view.$('.location-details').html(
+                            NS.Templates['location-details'](view.model.toJSON())
+                          );
+                        },
+                        function() {
+                          window.alert('Oops, we couldn\'t update the ward. Move the marker to try again.');
+                        });
                   });
                 });
 
