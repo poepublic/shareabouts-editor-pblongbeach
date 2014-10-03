@@ -74,7 +74,7 @@ var Shareabouts = Shareabouts || {};
       var model = NS.placeCollection.get(placeId),
           getWard = function(lat, lng, success, error) {
             $.ajax({
-              url: 'https://shareabouts-region-service.herokuapp.com/api/v1/chicago/wards',
+              url: 'https://shareabouts-region-service.herokuapp.com/api/v1/chicago/wards_communityareas',
               data: {
                 ll: lat+','+lng
               },
