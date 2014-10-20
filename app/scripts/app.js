@@ -16,9 +16,7 @@ var Shareabouts = Shareabouts || {};
   // Initialize the dataset collection
   NS.app.addInitializer(function(options){
     NS.datasetCollection = new Backbone.Collection([
-      { id: 'abandoned-bikes', name: 'Abandoned Bikes', url: 'http://data.shareabouts.org/api/v2/chicagobikes/datasets/chicago-abandoned-bikes', dataUrl: 'http://data.shareabouts.org/api/v2/chicagobikes/datasets/chicago-abandoned-bikes/places?include_invisible&include_private&page_size=5000&format=csv'
-},
-      { id: 'bike-parking', name: 'Bike Parking', url: 'http://data.shareabouts.org/api/v2/chicagobikes/datasets/chicago-bike-parking', dataUrl: 'http://data.shareabouts.org/api/v2/chicagobikes/datasets/chicago-bike-parking/places?include_invisible&include_private&page_size=5000&format=csv'}
+      { id: 'Long-Beach-Dev', name: 'PB Long Beach', url: 'http://data.shareabouts.org/api/v2/PBP/datasets/long-beach-dev', dataUrl: 'http://data.shareabouts.org/api/v2/PBP/datasets/long-beach-dev/places?include_invisible&include_private&page_size=5000&format=csv'}
     ]);
   });
 

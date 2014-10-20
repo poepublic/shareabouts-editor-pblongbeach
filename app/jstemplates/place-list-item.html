@@ -3,7 +3,6 @@
     <h4><strong>{{>place-name . }}</strong>
       {{#if ward}}, Ward Name {{/if}}<small>({{ id }})</small></h4>
     <span class="label secondary radius">Created: <strong>{{formatDateTime created_datetime 'MMM DD, YYYY [at] H:MM' }}</strong></span>
-    <span class="label secondary radius">Status: <strong>{{default status "Not Yet Surveyed"}}</strong></span>
   </div><!-- end .columns -->
   <div class="medium-4 large-2 columns">
     <a href="#{{ currentDataset }}/{{ id }}" class="button expand radius">EDIT</a>

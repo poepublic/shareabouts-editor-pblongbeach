@@ -17,22 +17,20 @@
             <div class="row">
               <div class="large-8 columns">
 
-                <label>Name <em>(shown on map)</em><input type="text" name="name" value="{{name}}"></label>
-                <label>Description <em>(shown on map)</em><textarea rows="6" name="description">{{ description }}</textarea></label>
-                <label>Source
-                  <select name="private_source">
-                    {{#select private_source}}
-                    <option value="Submitted via public map">Submitted via public map</option>
-                    <option value="311">311</option>
-                    <option value="311+Alderman">311+Alderman</option>
-                    <option value="Alderman">Alderman</option>
-                    <option value="Bike Parking Staff">Bike Parking Staff</option>
-                    <option value="Phone">Phone</option>
-                    <option value="Mayor">Mayor</option>
+                <label>My project idea is... <em>(shown on map)</em><input type="text" name="name" value="{{name}}"></label>
+                <label>So that people could... <em>(shown on map)</em><textarea rows="6" name="description">{{ description }}</textarea></label>
+                <label>Category <em>(shown on map)</em>
+                  <select name="location_type">
+                    {{#select location_type}}
+                    <option value="culture">Culture & Community Facilities</option>
+                    <option value="education">Education</option>
+                    <option value="environment">Environment</option>
+                    <option value="parks">Parks & Recreation</option>
+                    <option value="health">Public Health & Safety</option>
+                    <option value="streets">Streets & Sidewalks</option>
                     {{/select}}
                   </select>
                 </label>
-                <label>Source Locator<input type="text" name="private_source_locator" value="{{ private_source_locator }}"></label>
 
               </div><!-- end .columns -->
 
@@ -48,48 +46,18 @@
             </div><!-- end .row -->
 
           </fieldset>
-
+ 
           <fieldset>
-            <legend>Status</legend>
-
-            <div class="row">
-              <div class="large-4 large-push-8 columns">
-
-                <br class="show-for-large-up">
-                <label for="priority" class="button secondary expand radius">
-                  <input id="priority" type="checkbox" name="private_priority" {{#if private_priority}}checked="checked"{{/if}}> PRIORITY</label>
-
-              </div><!-- end .columns -->
-              <div class="large-8 large-pull-4 columns">
-
-                <label>Status <em>(shown on map)</em>
-                  <select name="status">
-                    {{#select status}}
-                    <option value="">New Report</option>
-                    <option value="Resolved">Resolved</option>
-                    {{/select}}
-                  </select>
-                </label>
-                <label>Date Visited<input type="text" class="date" name="private_date_visited" value="{{ private_date_visited }}"></label>
-                <label>Date Safe for Removal<input type="text" name="private_date_safe_to_remove" value="{{ private_date_safe_to_remove }}"></label>
-                <label>Date Removed<input type="text" name="private_date_removed" value="{{ private_date_removed }}"></label>
-                <label>Date Received by Working Bikes<input type="text" name="private_date_received" value="{{ private_date_received }}"></label>
-
-
-                </div><!-- end .columns -->
-              </div><!-- end .row -->
-
-          </fieldset>
-
-          <fieldset>
-            <legend>Notes</legend>
+            <legend>Submitter details</legend>
 
             <div class="row">
               <div class="large-8 columns">
 
-                <label>Public Notes <em>(shown on map)</em><textarea rows="6" name="notes_public">{{ notes_public }}</textarea></label>
-                <label>Private Notes<textarea rows="6" name="private_notes">{{ private_notes }}</textarea></label>
-                <label>Contractor Notes<textarea rows="6" name="private_contractor_notes">{{ private_contractor_notes }}</textarea></label>
+                <label>Name (if logged in)<em>(shown on map)</em><input type="text" name="submitter_name" value="{{ submitter.name }}"></label>
+                <label>Name (if not logged in)<em>(shown on map)</em><input type="text" name="submitter_name" value="{{ submitter_name }}"></label>
+                <label>Email <em>(private)</em><input type="text" name="private-email" value="{{ private-email }}"></label>
+                <label>Phone Number <em>(private)</em><input type="text" name="private-phone" value="{{ private-phone }}"></label>
+                <label>Volunteer? <em>(private)</em><input type="text" name="private-volunteer" value="{{ private-volunteer }}"></label>
 
               </div><!-- end .columns -->
             </div><!-- end .row -->

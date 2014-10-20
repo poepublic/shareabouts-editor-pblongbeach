@@ -74,7 +74,7 @@ var Shareabouts = Shareabouts || {};
       var model = NS.placeCollection.get(placeId),
           getWard = function(lat, lng, success, error) {
             $.ajax({
-              url: 'https://shareabouts-region-service.herokuapp.com/api/v1/chicago/wards_communityareas',
+              url: 'https://shareabouts-region-service.herokuapp.com/api/v1/longbeach/districts',
               data: {
                 ll: lat+','+lng
               },
@@ -159,7 +159,7 @@ var Shareabouts = Shareabouts || {};
                           );
                         },
                         function() {
-                          window.alert('Oops, we couldn\'t update the ward. Move the marker to try again.');
+                          window.alert('Oops, we couldn\'t update the district. Move the marker to try again.');
                         });
                   });
                 });
