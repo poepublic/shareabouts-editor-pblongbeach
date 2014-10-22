@@ -53,11 +53,34 @@
             <div class="row">
               <div class="large-8 columns">
 
-                <label>Name (if logged in)<em>(shown on map)</em><input type="text" name="submitter_name" value="{{ submitter.name }}"></label>
-                <label>Name (if not logged in)<em>(shown on map)</em><input type="text" name="submitter_name" value="{{ submitter_name }}"></label>
+                <label>Name (if logged in)<em> (shown on map)</em><input type="text" name="submitter_name" value="{{ submitter.name }}"></label>
+                <label>Name (if not logged in)<em> (shown on map)</em><input type="text" name="submitter_name" value="{{ submitter_name }}"></label>
                 <label>Email <em>(private)</em><input type="text" name="private-email" value="{{ private-email }}"></label>
                 <label>Phone Number <em>(private)</em><input type="text" name="private-phone" value="{{ private-phone }}"></label>
                 <label>Volunteer? <em>(private)</em><input type="text" name="private-volunteer" value="{{ private-volunteer }}"></label>
+
+              </div><!-- end .columns -->
+            </div><!-- end .row -->
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Eligibility (private)</legend>
+
+            <div class="row">
+              <div class="large-8 columns">
+
+                <label>Capital Eligibility<select name="private-capital">
+                  {{#select private-capital}}
+                    <option value="">Please chooose...</option></label>
+                    <option value="yes">Yes</option></label>
+                    <option value="no">No</option></label>
+                    <option value="maybe">Maybe</option></label>
+                  {{/select}} </select>
+                </label>
+                <label>Explanation (if eligibility is "no" or "maybe")<input type="text" name="private-explanation" value="{{ private-explanation }}"></label>
+                <label>Relevant City Agency<input type="text" name="private-agency" value="{{ private-agency }}"></label>
+                <label>Notes<input type="text" name="private-notes" value="{{ private-notes }}"></label>
 
               </div><!-- end .columns -->
             </div><!-- end .row -->
