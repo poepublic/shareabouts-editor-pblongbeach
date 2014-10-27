@@ -17,8 +17,8 @@
             <div class="row">
               <div class="large-8 columns">
 
-                <label>My project idea is... <em>(shown on map)</em><input type="text" name="name" value="{{name}}"></label>
-                <label>So that people could... <em>(shown on map)</em><textarea rows="6" name="description">{{ description }}</textarea></label>
+                <label>Idea <em>(shown on map)</em><input type="text" name="name" value="{{name}}"></label>
+                <label>Purpose/Rationale/Details <em>(shown on map)</em><textarea rows="6" name="description">{{ description }}</textarea></label>
                 <label>Category <em>(shown on map)</em>
                   <select name="location_type">
                     {{#select location_type}}
@@ -30,6 +30,7 @@
                     <option value="streets">Streets & Sidewalks</option>
                     {{/select}}
                   </select>
+                <label>Number of Dot Votes at the Assembly<input type="text" name="private-dot-votes" value="{{ private-dot-votes }}"></label>
                 </label>
 
               </div><!-- end .columns -->
