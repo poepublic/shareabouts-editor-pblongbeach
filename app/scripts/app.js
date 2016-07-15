@@ -16,8 +16,8 @@ var Shareabouts = Shareabouts || {};
   // Initialize the dataset collection
   NS.app.addInitializer(function(options){
     NS.datasetCollection = new Backbone.Collection([
-      { id: 'Long-Beach-Dev', name: 'PB Long Beach 2014/15', url: 'https://shareaboutsapi2.herokuapp.com/api/v2/PBP/datasets/pb-long-beach', dataUrl: 'https://shareaboutsapi2.herokuapp.com/api/v2/PBP/datasets/pb-long-beach/places?include_invisible&include_private&page_size=5000&format=csv'}
-      { id: 'Long-Beach-Dev', name: 'PB Long Beach 2015/16', url: 'https://shareaboutsapi2.herokuapp.com/api/v2/PBP/datasets/pb-long-beach-2015', dataUrl: 'https://shareaboutsapi2.herokuapp.com/api/v2/PBP/datasets/pb-long-beach-2015/places?include_invisible&include_private&page_size=5000&format=csv'}
+      { id: 'Long-Beach-2014', name: 'PB Long Beach 2014/15', url: 'https://shareaboutsapi2.herokuapp.com/api/v2/PBP/datasets/pb-long-beach', dataUrl: 'https://shareaboutsapi2.herokuapp.com/api/v2/PBP/datasets/pb-long-beach/places?include_invisible&include_private&page_size=5000&format=csv'},
+      { id: 'Long-Beach-2015', name: 'PB Long Beach 2015/16', url: 'https://shareaboutsapi2.herokuapp.com/api/v2/PBP/datasets/pb-long-beach-2015', dataUrl: 'https://shareaboutsapi2.herokuapp.com/api/v2/PBP/datasets/pb-long-beach-2015/places?include_invisible&include_private&page_size=5000&format=csv'}
     ]);
   });
 
