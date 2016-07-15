@@ -28,7 +28,9 @@ var Shareabouts = Shareabouts || {};
 
   // Initialize the user authentication
   NS.app.addInitializer(function(options){
-    NS.auth = new NS.Auth();
+    NS.auth = new NS.Auth({
+      apiRoot: 'https://shareaboutsapi2.herokuapp.com/api/v2/'
+    });
   });
 
   // Show the header region
